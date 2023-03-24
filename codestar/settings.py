@@ -117,7 +117,7 @@ WSGI_APPLICATION = 'codestar.wsgi.application'
 #     }
 # }
 
-if 'test' not in os.environ:
+if 'test' in sys.argv:
     # Configuration for test database
     DATABASES = {
         'default': {
