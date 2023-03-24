@@ -8,5 +8,5 @@ class CommentForm(forms.ModelForm):
         model = Comment
         fields = ('body',)
         widgets = {
-            'body': SummernoteInplaceWidget(),
+            'body': SummernoteWidget()
         }

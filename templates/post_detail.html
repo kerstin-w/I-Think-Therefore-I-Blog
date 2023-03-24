@@ -1,4 +1,5 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{% block content %}
 {% load crispy_forms_tags %}
 
 <div class="masthead">
@@ -95,10 +96,10 @@
         {% csrf_token %}
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            {{ form | crispy }}
+            {{ body|safe }}
+            {{ form.as_p }}
             <div class="d-flex flex-row justify-content-end gap-1">
                 <input class="btn btn-primary" type="submit" value="Submit Request">
-                <a class="btn btn-secondary" href="{% url 'ticket_list' %}">Cancel</a>
             </div>
         </form>
         <div class="col-md-4 card mb-4  mt-3 ">
@@ -124,5 +125,4 @@
         </div>
     </div>
 </div>
-
 {% endblock content %}
